@@ -6,19 +6,16 @@ const PORT = 8080;
 const bodyParser = require('body-parser');
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
-// const cors = require('cors');
-    // app.use(cors({ origin: "http://localhost:3000" })); // need to download npm package
+const cors = require('cors');
+    app.use(cors({ origin: "http://localhost:3000" }));
 
 
 //SETUP
     //static files
 app.use(express.static('public/BrainStation.png'));
     //Route Registry
-app.use('<path>', require('<./route/<filename>>'))
-
-
-
-
+app.use('/home', require('./routes/home'))
+app.use('/results/:query', require('./routes/search'))
 
 
 app.listen(PORT, callback=>{
