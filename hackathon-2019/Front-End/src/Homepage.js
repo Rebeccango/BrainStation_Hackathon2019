@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 //Dependencies 
 import ActorCard from './components/ActorCard';
-import Button from './components/Button';
 
 
 export default class Homepage extends React.Component{
@@ -10,7 +9,6 @@ export default class Homepage extends React.Component{
         super(props)
         this.state ={
             recommendedActors: [],
-            movieData: []
         }
     }
     componentDidMount(){
@@ -30,12 +28,20 @@ export default class Homepage extends React.Component{
     render(){
         return(
             <div className="HomePage">
-                <h1>Golden Years</h1>
+                <h1 className="HomePage__header">Golden Years</h1>
                 <h3>Pick Your Favourit Actor/Actress</h3>
-                <div ClassName="ActorsList__div--containder">
-                    <ActorCard/>
-                </div>
-                <Button/>
+                <section ClassName="ActorsList">
+                    <h6 className="subheader">Select your Favourite Character</h6>
+                    <div ClassName="ActorsList__div--container">
+                        <ActorCard/>
+                        <ActorCard/>
+                        <ActorCard/>
+                        <ActorCard/>
+                        <ActorCard/>
+                        {/* {ActorCardListJSX} */}
+                    </div>
+                    <button className="submitbtn">Submit</button>
+                </section>
             </div>
         )
     }

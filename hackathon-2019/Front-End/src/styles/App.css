@@ -1,66 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  -webkit-animation: App-logo-spin infinite 20s linear;
-          animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 .primarybtn, .primarybtn :hover {
   text-decoration: none;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
-  color: #323232;
+  color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
-  color: #AFAFAF;
+  color: #ffc200;
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;
@@ -80,7 +23,7 @@
 
 h1 {
   font-family: 'Avenir Next Bold';
-  color: #323232;
+  color: #ffc200;
   text-decoration: none;
   margin-top: 24px;
   font-size: 24px;
@@ -98,7 +41,7 @@ h1 {
 
 .hero__header {
   font-family: 'Avenir Next Bold';
-  color: #323232;
+  color: #ffc200;
   text-decoration: none;
   color: #323232;
   font-size: 24px;
@@ -114,7 +57,7 @@ h1 {
 
 .header-small {
   font-family: 'Avenir Next Bold';
-  color: #323232;
+  color: #ffc200;
   text-decoration: none;
   font-size: 24px;
   line-height: 32px;
@@ -122,7 +65,7 @@ h1 {
 
 h2 {
   font-family: 'Avenir Next Bold';
-  color: #323232;
+  color: #ffc200;
   text-decoration: none;
   font-family: 'Avenir Next Demi Bold';
   font-size: 14px;
@@ -139,9 +82,9 @@ h2 {
 h5, label {
   text-decoration: none;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
-  color: #323232;
+  color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
-  color: #AFAFAF;
+  color: #ffc200;
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;
@@ -150,17 +93,12 @@ h5, label {
 }
 
 .actor {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: inline-block;
 }
 
 .actor img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -169,8 +107,9 @@ h5, label {
 .HomePage {
   padding: 2vw 2vw 0vw;
   width: 100%;
-  height: 100%;
-  background-color: #FAFAFA;
+  height: 100vh;
+  background-color: #323232;
+  color: #ffc200;
 }
 
 @media (min-width: 768px) {
@@ -183,5 +122,32 @@ h5, label {
   .HomePage {
     padding: 3vw 9.5vw;
   }
+}
+
+.HomePage .HomePage__header {
+  color: #ffc200;
+}
+
+.ActorsList__div--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ActorsList__div--container *, .ActorsList__div--container > * {
+  display: inline-block;
+}
+
+.submitbtn {
+  background-color: #ffc200;
+  padding: 1rem;
+  border-style: none;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=App.css.map */

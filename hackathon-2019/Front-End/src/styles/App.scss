@@ -1,36 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 // VARIABLES
   //Media Widths
 $mobile: 320px;
@@ -41,6 +9,7 @@ $font-fam: 'Avenir Next Regular', 'Roboto', sans-serif; ;
   //colour Palette
 $White: #FFFFFF;
 $Black: #323232;
+$Yellow: rgb(255, 194,0);
 //text label color
 $Silver:#AFAFAF;
 $Mercury:#E1E1E1;
@@ -51,18 +20,18 @@ $Brainflix-blue-secondary:rgb(53, 167, 248);
   //text
   @mixin text-basics--header{
     font-family: 'Avenir Next Bold';
-    color: $Black;
+    color: $Yellow;
     text-decoration: none;
 } 
 @mixin text-basics--general{
   text-decoration: none;
   font-family: $font-fam;
-  color:	$Black;
+  color:	$Yellow;
 }
 @mixin label{
   @include text-basics--general;
   font-family: $font-fam;
-  color: $Silver;
+  color: $Yellow;
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;
@@ -89,7 +58,7 @@ $Brainflix-blue-secondary:rgb(53, 167, 248);
 
   @mixin fullscreen{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     }
 
   @mixin flex-desk{
@@ -186,14 +155,13 @@ h5, label{
   text-align: left;    
 }
 
-// ACTOR CARD -------------------------
+// ACTORCARD -------------------------
 .actor{
-  display: flex;
-  justify-content: space-evenly;
+  display: inline-block;
  
   img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -203,7 +171,26 @@ h5, label{
 .HomePage{
   @include section-padding-general();
   @include fullscreen();
+  background-color: $Black;
+  color: $Yellow;
+  .HomePage__header{
+    color: $Yellow;
+  }
+}
 
-  background-color: $Alabaster;
+.ActorsList__div--container{
+  & *, &>*{
+    display: inline-block;
+  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.submitbtn{
+  background-color: $Yellow;
+  padding: 1rem;
+  border-style: none;
+  border-radius: 4px;
 }
 
