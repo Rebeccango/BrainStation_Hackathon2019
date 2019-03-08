@@ -10,6 +10,13 @@ const bodyParser = require('body-parser');
     // app.use(cors({ origin: "http://localhost:3000" })); // need to download npm package
 
 
+//SETUP
+    //static files
+app.use(express.static('public/BrainStation.png'));
+    //Route Registry
+app.use('<path>', require('<./route/<filename>>'))
+
+
 
 
 
