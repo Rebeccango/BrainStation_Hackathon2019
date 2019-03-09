@@ -32,43 +32,14 @@ $Brainflix-blue-secondary:rgb(53, 167, 248);
   @include text-basics--general;
   font-family: $font-fam;
   color: $Yellow;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 10px;
   font-weight: 600;
 }
   //Formatting 
-  @mixin block-responsive{
-    display: block;
-    @media (min-width: $tablet) {
-    display: inline-block;
-      }
-        @media (min-width: $desktop) {
-        display: inline-block;
-      }
-    }
-  @mixin border-outline {
-  border: solid 2px $Mercury;
-  border-radius: 4px;
-  background-color: rgb(250,250,250);
-  }
-
-  @mixin border-section-bottom {
-    border-bottom: solid 1px $Mercury;
-    }
-
   @mixin fullscreen{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     }
-
-  @mixin flex-desk{
-    display: flex;
-    flex-direction: column;
-    @media (min-width: $tablet ) { 
-    flex-direction: row ; 
-    wrap: no-wrap; 
-    }
-  }
 
   @mixin section-padding-general{
     padding: 2vw 2vw 0vw ;
@@ -79,12 +50,8 @@ $Brainflix-blue-secondary:rgb(53, 167, 248);
     padding: 3vw 9.5vw;
       }
     }
-//Avatar 
-@mixin avatar{
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-}
+
+
 //Button
 @mixin primarybtn--hover{
   @extend .primarybtn;
@@ -121,27 +88,23 @@ h1{
   }
 }
 
-.hero__header{
-  @include text-basics--header;
-  color: $Black;
-  font-size: 24px;
-  line-height: 32px;
-  @media (min-width: $tablet) {
-  font-size: 60px;
-  line-height: 68px;
-  }
-}
-
-.header-small{
-  @include text-basics--header;
-  font-size: 24px;
-  line-height: 32px;
-}
-
 h2{
   @include text-basics--header();
   font-family: 'Avenir Next Demi Bold';
   font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+      @media (min-width: $tablet) {
+          font-size: 16px;
+          line-height: 24px;
+      }
+    } 
+h3{
+  @include text-basics--header();
+  font-family: 'Avenir Next Demi Bold';
+  margin-left: 3.5rem;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 22px;
       @media (min-width: $tablet) {
           font-size: 16px;
@@ -151,68 +114,213 @@ h2{
 
 h5, label{
   @include label(); 
+  font-weight: 200;
   display: block;
   text-align: left;    
 }
 
-// ACTORCARD -------------------------
-// .actor{
-//   display: flex;
-//   // flex-wrap: wrap;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   margin-left: 200px;
-//   margin-right: 200px;
-//  }
+//HEADER COMPONENT ----------------------
+header{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: black;
+  height: 45px;
+  .header__container > *{
+    margin: 0px;
+    padding: 0px;
+  }
+  .main__subheader{
+    font-weight: 200;
+    font-size: 10px;
+  }
+  .goldenYears__reel{
+    height: 40px;
+    margin: 0rem 1rem;
+  }
+}
 
- img{
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+//MOVIE TITLE CARD ------------------------------
+.movietitlecard{
+  position: relative;
+  width: 120px;
+  height: 150px;
+  background-color: #d8d8d8;
+  border-radius: 4px;
+  margin: 0.75rem;
+
+  .movietitlecard__title--container{
+    position: absolute;
+    bottom: 0px;
+    width: 99%;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 1px;
+    overflow: hidden;
+    & > *{
+      color: white;
+    }
+  }
+}
+.movieposter{
+  width: 120px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: fill;
+  object-position: center;
+}
+//RECOMMENDATION CARD -----------------------------
+.recommendationCard{
+  position: relative;
+  width: 80vw;  
+  height: 45vh;
+  background-color: #d8d8d8;
+  border-radius: 4px;
+  margin: 0.75rem;
+
+  .movietitlecard__title--container{
+    position: absolute;
+    bottom: 0px;
+    width: 99.6%;
+    // border-radius: 4px;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 1px;
+    & > *{
+      color: white;
+    }
+  }
+}
+
+.movieposter--recommendation{
+  width:100%;
+  height: 100%;
+  border-radius: 4px;
   object-fit: cover;
+  object-position: center;
 }
-h3{
-  display: block;
-  width: 100px;
+
+
+// ACTORCARD -------------------------
+.actorCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  margin: 0.75rem 1.5rem;  
+  height: 100px;
+  h5 {
+    margin: 0.25rem;
+  }
+  .actorImg{
+    border-radius: 50%;
+    filter: grayscale(100%);
+    object-fit: cover; 
+    width: 80px;
+    height: 80px;
+    &:hover{
+      filter: grayscale(0%);
+    }
+  }
+
+  .actorImg:focus{
+    filter: grayscale(100%);
+  }
+  .actorCard--name{
+    text-align: center;
+    width: 155px;
+  }
 }
+
+a{
+  text-decoration: none;
+}
+
+//RECOMMENDED ACTOR LIST ----  
+.ActorsList__div{
+  .ActorsSelection__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0rem;
+  }
+}
+
+label {
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+label:hover {
+  filter: grayscale(0);
+}
+input[type="radio"]:checked + label {
+  filter: grayscale(0);
+}
+
+[type=checkbox] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+[type=checkbox] + img {
+  cursor: pointer;
+}
+
+[type=checkbox]:checked + img {
+  // outline: 2px solid #f00;
+    filter: grayscale(0);
+}
+
 
 //HOMEPAGE --------------------------
 .HomePage{
   @include section-padding-general();
-  @include fullscreen();
+  position:relative;
+  margin: 0px;
+  padding-bottom: 1.5rem;
   background-color: $Black;
   color: $Yellow;
+  padding-bottom: 4em;
   .HomePage__header{
     color: $Yellow;
   }
 }
 
 .ActorsList__div--container{
-  // display: -webkit-flex;
   display: flex;
-  // -webkit-flex-direction: row;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: auto;
+  margin-bottom: 1rem;
   justify-content: space-between;
 }
 
-.submitbtn{
+.homepage__submitbtn{
+  position: absolute;
+  right: 50%;
+  bottom: 0.25px;
+  transform: translateX(50%);
+  font-weight: 600;
   background-color: $Yellow;
-  padding: 1rem;
+  width: 100px;
+  margin: 1rem 0rem;
+  padding: 0.50rem;
   border-style: none;
   border-radius: 4px;
 }
 
 
 //RESULTS --------------------------
-.HomePage{
-  @include section-padding-general();
-  @include fullscreen();
-  background-color: $Black;
-  color: $Yellow;
-  .HomePage__header{
-    color: $Yellow;
-  }
+.Searchpage{
+  @extend .HomePage;
+  padding: 0px;
+}
+
+.actorSelectionResults{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 85%;
+  margin: auto;
 }

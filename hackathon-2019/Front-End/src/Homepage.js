@@ -1,49 +1,49 @@
 import React from 'react';
-import axios from 'axios';
-//Dependencies 
+// Component Dependencies 
 import ActorCard from './components/ActorCard';
+import Header from './components/Header';
+//Sample Data
+import recommendedActors from './data/RecommendedActors';
 
 
 export default class Homepage extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            recommendedActors: [],
+            recommendedActors: recommendedActors,
         }
-    }
-    componentDidMount(){
-        console.log('call made ');
-        const URL = `http://localhost:8080/home`;
-        axios.get(URL)
-        .then(response=>{
-            this.setState({
-                recommendedActors: response.data
-            })
-            console.log( this.state.recommendedActors);
-        })
-        .catch(err =>{
-            console.log(err);
-        });
+        this.actorSelectForm = React.createRef();
     }
 
+    submitForm = (e)=>{
+        console.log(this.actorSelectForm);
+        e.preventDefault();
+        let path = "/results"
+        this.props.history.push(path);
+      }
     render(){
-        const recommendedActors = this.state.recommendedActors || [];
+        const recommendedActors = this.state.recommendedActors;
 
         console.log(this.props.recommendedActors);
         return(
+            <>
+            <Header/>
             <div className="HomePage">
-                <h1 className="HomePage__header">Golden Years</h1>
-                <h3>Pick Your Favourite Actor/Actress</h3>
                 <section className="ActorsList">
-                    <h6 className="subheader">Select your Favourite Character</h6>
-                    <div className="ActorsList__div--container">
+                    <h2 className="subheader">Select your Favourite Actor</h2>
+                    <div className="ActorsList__div">
+                        <form className="ActorsSelection__form" ref={this.actorSelectForm}>
                         {recommendedActors.map( actor => (
                             <ActorCard name={actor.name} id={actor.id} src={actor.URL }/> ) 
-                        )}
+                            )}
+                        <input className="homepage__submitbtn"
+                                type='submit'
+                                onClick={this.submitForm}/>
+                        </form>
                     </div>
-                    <button className="submitbtn">Submit</button>
                 </section>
             </div>
+            </>
         )
     }
 }

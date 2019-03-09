@@ -12,12 +12,9 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-            <Route path="/" exact render={props=>{ return <Homepage {...props}/>}}/>
-            {/* <Route path="/" Component={SearchPage}/> */}
-            <Route path="/:id" render={props=><SearchPage {...props}/>}/>
-
-            <Route path="/search" render={props=><SearchPage {...props}/>}/>
-          </Switch>
+          <Route exact path="/" component={Homepage}/>
+          <Route path="/results" component={SearchPage}/>
+        </Switch>
       </Router>
     );
   }

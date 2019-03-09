@@ -4,8 +4,7 @@
   color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
   color: #ffc200;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 10px;
   font-weight: 600;
   display: block;
   margin: 1rem 0rem;
@@ -39,41 +38,36 @@ h1 {
   }
 }
 
-.hero__header {
-  font-family: 'Avenir Next Bold';
-  color: #ffc200;
-  text-decoration: none;
-  color: #323232;
-  font-size: 24px;
-  line-height: 32px;
-}
-
-@media (min-width: 768px) {
-  .hero__header {
-    font-size: 60px;
-    line-height: 68px;
-  }
-}
-
-.header-small {
-  font-family: 'Avenir Next Bold';
-  color: #ffc200;
-  text-decoration: none;
-  font-size: 24px;
-  line-height: 32px;
-}
-
 h2 {
   font-family: 'Avenir Next Bold';
   color: #ffc200;
   text-decoration: none;
   font-family: 'Avenir Next Demi Bold';
   font-size: 14px;
+  font-weight: 500;
   line-height: 22px;
 }
 
 @media (min-width: 768px) {
   h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+h3 {
+  font-family: 'Avenir Next Bold';
+  color: #ffc200;
+  text-decoration: none;
+  font-family: 'Avenir Next Demi Bold';
+  margin-left: 3.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+@media (min-width: 768px) {
+  h3 {
     font-size: 16px;
     line-height: 24px;
   }
@@ -85,48 +79,225 @@ h5, label {
   color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
   color: #ffc200;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 10px;
   font-weight: 600;
+  font-weight: 200;
   display: block;
   text-align: left;
 }
 
-img {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  background-color: black;
+  height: 45px;
 }
 
-h3 {
-  display: block;
-  width: 100px;
+header .header__container > * {
+  margin: 0px;
+  padding: 0px;
 }
 
-.HomePage {
-  padding: 2vw 2vw 0vw;
+header .main__subheader {
+  font-weight: 200;
+  font-size: 10px;
+}
+
+header .goldenYears__reel {
+  height: 40px;
+  margin: 0rem 1rem;
+}
+
+.movietitlecard {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  background-color: #d8d8d8;
+  border-radius: 4px;
+  margin: 0.75rem;
+}
+
+.movietitlecard .movietitlecard__title--container {
+  position: absolute;
+  bottom: 0px;
+  width: 99%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px;
+  overflow: hidden;
+}
+
+.movietitlecard .movietitlecard__title--container > * {
+  color: white;
+}
+
+.movieposter {
+  width: 120px;
+  height: 150px;
+  border-radius: 4px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.recommendationCard {
+  position: relative;
+  width: 80vw;
+  height: 45vh;
+  background-color: #d8d8d8;
+  border-radius: 4px;
+  margin: 0.75rem;
+}
+
+.recommendationCard .movietitlecard__title--container {
+  position: absolute;
+  bottom: 0px;
+  width: 99.6%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px;
+}
+
+.recommendationCard .movietitlecard__title--container > * {
+  color: white;
+}
+
+.movieposter--recommendation {
   width: 100%;
   height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.actorCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15vw;
+  margin: 0.75rem 1.5rem;
+  height: 100px;
+}
+
+.actorCard h5 {
+  margin: 0.25rem;
+}
+
+.actorCard .actorImg {
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80px;
+  height: 80px;
+}
+
+.actorCard .actorImg:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.actorCard .actorImg:focus {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.actorCard .actorCard--name {
+  text-align: center;
+  width: 155px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ActorsList__div .ActorsSelection__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0rem;
+}
+
+label {
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+label:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+input[type="radio"]:checked + label {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=checkbox] + img {
+  cursor: pointer;
+}
+
+[type=checkbox]:checked + img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.HomePage, .Searchpage {
+  padding: 2vw 2vw 0vw;
+  position: relative;
+  margin: 0px;
+  padding-bottom: 1.5rem;
   background-color: #323232;
   color: #ffc200;
+  padding-bottom: 4em;
 }
 
 @media (min-width: 768px) {
-  .HomePage {
+  .HomePage, .Searchpage {
     padding: 3vw 3vw 0vw;
   }
 }
 
 @media (min-width: 1440px) {
-  .HomePage {
+  .HomePage, .Searchpage {
     padding: 3vw 9.5vw;
   }
 }
 
-.HomePage .HomePage__header {
+.HomePage .HomePage__header, .Searchpage .HomePage__header {
   color: #ffc200;
 }
 
@@ -140,40 +311,41 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: auto;
+  margin-bottom: 1rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.submitbtn {
+.homepage__submitbtn {
+  position: absolute;
+  right: 50%;
+  bottom: 0.25px;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  font-weight: 600;
   background-color: #ffc200;
-  padding: 1rem;
+  width: 100px;
+  margin: 1rem 0rem;
+  padding: 0.50rem;
   border-style: none;
   border-radius: 4px;
 }
 
-.HomePage {
-  padding: 2vw 2vw 0vw;
-  width: 100%;
-  height: 100%;
-  background-color: #323232;
-  color: #ffc200;
+.Searchpage {
+  padding: 0px;
 }
 
-@media (min-width: 768px) {
-  .HomePage {
-    padding: 3vw 3vw 0vw;
-  }
-}
-
-@media (min-width: 1440px) {
-  .HomePage {
-    padding: 3vw 9.5vw;
-  }
-}
-
-.HomePage .HomePage__header {
-  color: #ffc200;
+.actorSelectionResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 85%;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */
