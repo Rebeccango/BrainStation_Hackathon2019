@@ -1,5 +1,6 @@
 module.exports = recommendedActors = [
     {
+        id:0,
         name: "Charlie Sheen",
         URL: "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg",
         sex: "male"
@@ -23,36 +24,7 @@ module.exports = recommendedActors = [
         name: "Sylvester Stallone",
         URL: "https://media.brstatic.com/2017/04/24162537/sylvester-stallone-on-the-red-carpet-mst.jpg",
         sex: "male"
-    },
-    {
-        name: "Tom Hanks",
-        URL: "",
-        sex: "male"
-    },
-    {
-        name: "",
-        URL: "",
-        sex: "male"
-    },
-    {
-        name: "Nicholas Cage",
-        URL: "",
-        sex: "female"
-    },
-    {
-        name: "Whoopi Goldberg",
-        URL: "",
-        sex: "female"
-    },
-    {
-        name: "Demi Moore",
-        URL: "",
-        sex: "female"
-    },
-    {
-        name: "Meryl Streep",
-        URL: "",
-        sex: "female"
     }
+   
 ]
 

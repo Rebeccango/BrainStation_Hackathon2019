@@ -25,20 +25,21 @@ export default class Homepage extends React.Component{
             console.log(err);
         });
     }
+
     render(){
+        const recommendedActors = this.state.recommendedActors || [];
+
+        console.log(this.props.recommendedActors);
         return(
             <div className="HomePage">
                 <h1 className="HomePage__header">Golden Years</h1>
-                <h3>Pick Your Favourit Actor/Actress</h3>
-                <section ClassName="ActorsList">
+                <h3>Pick Your Favourite Actor/Actress</h3>
+                <section className="ActorsList">
                     <h6 className="subheader">Select your Favourite Character</h6>
-                    <div ClassName="ActorsList__div--container">
-                        <ActorCard/>
-                        <ActorCard/>
-                        <ActorCard/>
-                        <ActorCard/>
-                        <ActorCard/>
-                        {/* {ActorCardListJSX} */}
+                    <div className="ActorsList__div--container">
+                        {recommendedActors.map( actor => (
+                            <ActorCard name={actor.name} id={actor.id} src={actor.URL }/> ) 
+                        )}
                     </div>
                     <button className="submitbtn">Submit</button>
                 </section>
