@@ -6,17 +6,15 @@ import { Link } from 'react-router-dom';
 
 export default class MovieTitleCard extends Component {
 
-
   render() {
-    console.log(this.props)
     return (
     // <Link to ="/results" >
       <div className='recommendationCard'>
-        {/* <img className="movieposter--recommendation" 
-             alt="movie-poster"
-             src="https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Toy_Story.jpg/220px-Toy_Story.jpg"/> */}
+        <img className="movieposter--recommendation" 
+             alt={this.props.alt}
+             src={this.props.src}/>
         <div  className="movietitlecard__title--container">
-          <h3 className="movietitlecard__title">{this.props.title}</h3>
+          <h3 className="movietitlecard__title">{this.props.star} - {this.props.title}</h3>
         </div>
         
       </div> 

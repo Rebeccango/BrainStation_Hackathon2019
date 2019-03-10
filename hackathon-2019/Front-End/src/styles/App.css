@@ -4,20 +4,19 @@
   color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
   color: #ffc200;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
   display: block;
   margin: 1rem 0rem;
   color: #FFFFFF;
   font-weight: 700;
-  background-color: #0095FF;
   border: none;
   border-radius: 4px;
   padding: 10px 30px;
 }
 
 .primarybtn :hover {
-  background-color: #35a7f8;
+  background-color: #ffc200;
 }
 
 h1 {
@@ -43,7 +42,7 @@ h2 {
   color: #ffc200;
   text-decoration: none;
   font-family: 'Avenir Next Demi Bold';
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 22px;
 }
@@ -79,11 +78,15 @@ h5, label {
   color: #ffc200;
   font-family: "Avenir Next Regular", "Roboto", sans-serif;
   color: #ffc200;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
   font-weight: 200;
   display: block;
   text-align: left;
+}
+
+html {
+  background-color: #323232;
 }
 
 header {
@@ -97,6 +100,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5rem;
+  margin-bottom: 2rem;
   background-color: black;
   height: 45px;
 }
@@ -123,19 +127,27 @@ header .goldenYears__reel {
   background-color: #d8d8d8;
   border-radius: 4px;
   margin: 0.75rem;
+  margin: 0.5rem;
 }
 
 .movietitlecard .movietitlecard__title--container {
   position: absolute;
   bottom: 0px;
   width: 99%;
+  height: 35%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1px;
-  overflow: hidden;
+}
+
+.movietitlecard .movietitlecard__title--container .movietitlecard__title {
+  margin-top: 5%;
 }
 
 .movietitlecard .movietitlecard__title--container > * {
   color: white;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 0px;
 }
 
 .movieposter {
@@ -151,22 +163,26 @@ header .goldenYears__reel {
 .recommendationCard {
   position: relative;
   width: 80vw;
-  height: 45vh;
+  height: 50vh;
   background-color: #d8d8d8;
   border-radius: 4px;
   margin: 0.75rem;
+  margin-bottom: 3rem;
 }
 
 .recommendationCard .movietitlecard__title--container {
   position: absolute;
   bottom: 0px;
   width: 99.6%;
+  height: 35%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1px;
 }
 
 .recommendationCard .movietitlecard__title--container > * {
   color: white;
+  padding-top: 5%;
+  text-align: left;
 }
 
 .movieposter--recommendation {
@@ -175,8 +191,8 @@ header .goldenYears__reel {
   border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .actorCard {
@@ -208,8 +224,8 @@ header .goldenYears__reel {
           filter: grayscale(100%);
   -o-object-fit: cover;
      object-fit: cover;
-  width: 80px;
-  height: 80px;
+  width: 115px;
+  height: 115px;
 }
 
 .actorCard .actorImg:hover {
@@ -229,9 +245,10 @@ header .goldenYears__reel {
 
 a {
   text-decoration: none;
+  margin: 1.5em 0em;
 }
 
-.ActorsList__div .ActorsSelection__form {
+.ActorsList__div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,23 +257,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 1rem 0rem;
-}
-
-label {
-  cursor: pointer;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-label:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
-input[type="radio"]:checked + label {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  margin: 0.5rem 0rem;
 }
 
 [type=checkbox] {
@@ -276,25 +277,11 @@ input[type="radio"]:checked + label {
 }
 
 .HomePage, .Searchpage {
-  padding: 2vw 2vw 0vw;
   position: relative;
-  margin: 0px;
-  padding-bottom: 1.5rem;
+  margin: 2em 0em;
   background-color: #323232;
   color: #ffc200;
-  padding-bottom: 4em;
-}
-
-@media (min-width: 768px) {
-  .HomePage, .Searchpage {
-    padding: 3vw 3vw 0vw;
-  }
-}
-
-@media (min-width: 1440px) {
-  .HomePage, .Searchpage {
-    padding: 3vw 9.5vw;
-  }
+  height: 60vh;
 }
 
 .HomePage .HomePage__header, .Searchpage .HomePage__header {
@@ -336,7 +323,25 @@ input[type="radio"]:checked + label {
   padding: 0px;
 }
 
+.Searchpage h3 {
+  margin: 0px;
+}
+
 .actorSelectionResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.actorSelectionRecommendations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,5 +352,16 @@ input[type="radio"]:checked + label {
           justify-content: space-evenly;
   width: 85%;
   margin: auto;
+  margin-bottom: 2rem;
+}
+
+.indent {
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
+.videoPlayer__section {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 /*# sourceMappingURL=App.css.map */

@@ -6,20 +6,23 @@ import { Link } from 'react-router-dom';
 
 export default class ActorCard extends Component {
 
+  refresh = ()=>{
+    window.reload();
+  }
 
   render() {
-    console.log(this.props)
+    const link = `/results/${this.props.name}`;
+    console.log(this.props.name)
     return (
-    // <Link to ="/results" >
+    <Link to = {link}
+          onClick={this.refresh}>
       <div className='actorCard'>
-        <input type="checkbox" name={this.props.name}/>
-          <label for="actorselect">
             <img className="actorImg"
                 src={this.props.src}
                 alt={this.props.name}/>
-          </label>
           <h5 className='actorCard--name'>{this.props.name}</h5>
-      </div> 
+        </div> 
+      </Link>
       
     );
   }

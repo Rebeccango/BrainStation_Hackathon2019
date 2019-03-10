@@ -8,18 +8,17 @@ export default class MovieTitleCard extends Component {
 
 
   render() {
-    console.log(this.props)
     return (
-    // <Link to ="/results" >
-      <div className='movietitlecard'>
-        <img className="movieposter" 
-             alt="movie-poster"
-             src="https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Toy_Story.jpg/220px-Toy_Story.jpg"/>
-        <div  className="movietitlecard__title--container">
-          <h3 className="movietitlecard__title">{this.props.title}</h3>
-        </div>
-        
-      </div> 
+      <Link to="/watch">
+        <div className='movietitlecard'>
+          <img className="movieposter" 
+              alt="movie-poster"
+              src={this.props.src}/>
+          <div  className="movietitlecard__title--container">
+            <h3 className="movietitlecard__title">{this.props.title}</h3>
+          </div>  
+        </div> 
+      </Link>
       
     );
   }

@@ -24,22 +24,18 @@ export default class Homepage extends React.Component{
     render(){
         const recommendedActors = this.state.recommendedActors;
 
-        console.log(this.props.recommendedActors);
+        console.log(this.props);
         return(
             <>
-            <Header/>
             <div className="HomePage">
                 <section className="ActorsList">
-                    <h2 className="subheader">Select your Favourite Actor</h2>
+                    <h2 className="subheader indent">Select your Favourite Actor</h2>
                     <div className="ActorsList__div">
-                        <form className="ActorsSelection__form" ref={this.actorSelectForm}>
                         {recommendedActors.map( actor => (
-                            <ActorCard name={actor.name} id={actor.id} src={actor.URL }/> ) 
+                            <ActorCard name={actor.name} 
+                                        id={actor.id} 
+                                        src={actor.URL}/> ) 
                             )}
-                        <input className="homepage__submitbtn"
-                                type='submit'
-                                onClick={this.submitForm}/>
-                        </form>
                     </div>
                 </section>
             </div>

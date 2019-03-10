@@ -4,6 +4,8 @@ import  '../src/styles/App.css';
 //components
 import Homepage from './Homepage';
 import SearchPage from './SearchPage';
+import VideoPlayer from './VideoPlayer';
+import Header from './components/Header';
 
 // import './App.css';
 
@@ -11,10 +13,14 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <div className="App">
+          <Header/>
         <Switch>
-          <Route exact path="/" component={Homepage}/>
-          <Route path="/results" component={SearchPage}/>
+          <Route path="/" exact component={Homepage}/>
+          <Route path="/results/:actor" component={SearchPage}/>
+          <Route path="/watch" component={VideoPlayer}/>
         </Switch>
+        </div>
       </Router>
     );
   }

@@ -1,10 +1,10 @@
 const recommendedActors = [
-    {
-        id: "A-01",
-        name: "Charlie Sheen",
-        URL: "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg",
-        sex: "male"
-    },
+    // {
+    //     id: "A-01",
+    //     name: "Charlie Sheen",
+    //     URL: "https://pbs.twimg.com/profile_images/751591861127491584/l1swjFY4_400x400.jpg",
+    //     sex: "male"
+    // },
     {
         id: "A-02",
         name: "Robert de niro",
@@ -46,8 +46,13 @@ const recommendedActors = [
         name: "Demi Moore",
         URL: "https://m.media-amazon.com/images/M/MV5BMTc2Mjc1MDE4MV5BMl5BanBnXkFtZTcwNzAyNDczNA@@._V1_UY317_CR9,0,214,317_AL_.jpg",
         sex: "female"
+    },
+    {
+        id: "A-09",
+        name: "Tom Hanks",
+        URL: "https://m.media-amazon.com/images/M/MV5BMTQ2MjMwNDA3Nl5BMl5BanBnXkFtZTcwMTA2NDY3NQ@@._V1_UY1200_CR100,0,630,1200_AL_.jpg",
+        sex: "male"
     }
 ]
-
 export default recommendedActors;
 
