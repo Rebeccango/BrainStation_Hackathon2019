@@ -4,6 +4,7 @@ import ActorCard from './components/ActorCard';
 import Header from './components/Header';
 //Sample Data
 import recommendedActors from './data/RecommendedActors';
+import { WSAEINVALIDPROVIDER } from 'constants';
 
 
 export default class Homepage extends React.Component{
@@ -15,12 +16,6 @@ export default class Homepage extends React.Component{
         this.actorSelectForm = React.createRef();
     }
 
-    submitForm = (e)=>{
-        console.log(this.actorSelectForm);
-        e.preventDefault();
-        let path = "/results"
-        this.props.history.push(path);
-      }
     render(){
         const recommendedActors = this.state.recommendedActors;
 
@@ -34,6 +29,7 @@ export default class Homepage extends React.Component{
                         {recommendedActors.map( actor => (
                             <ActorCard name={actor.name} 
                                         id={actor.id} 
+                                        key={actor.id}
                                         src={actor.URL}/> ) 
                             )}
                     </div>

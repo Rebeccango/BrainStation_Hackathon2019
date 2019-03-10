@@ -1,5 +1,6 @@
 import React from 'react';
 //Component Dependencies
+import uuid from 'uuid';
 import Header from './components/Header';
 import MovieTitleCard from './components/MovieTitleCard';
 import RecommendationCard from './components/RecomendationCard';
